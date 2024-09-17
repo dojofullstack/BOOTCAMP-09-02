@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Formulario</h1>
+
+    <!-- <form action="https://engmh5j7s47u.x.pipedream.net" method="post">
+      <h4>Selecciona tu experiencia en backend (1 a 5)</h4>
+      <select name="experiencia" id="">
+        <option value="1">Nivel 1</option>
+        <option value="2">Nivel 2</option>
+        <option value="3">Nivel 3</option>
+        <option value="4">Nivel 4</option>
+        <option value="5">Nivel 5</option>
+      </select>
+
+      <h5>Selecciona tu pizza preferida</h5>
+      <select name="pizza" id="">
+        <option value="amaericana">
+            <div>
+                <img height="30px" src="https://tofuu.getjusto.com/orioneat-local/resized2/JYsRw3WFnCHeXDzG5-1200-1200.webp" alt="">
+                <span class="option-pizza"> 🍕 Pizza America2 </span>
+            </div>
+        </option>
+        <option value="peperoni">
+          <span class="option-pizza"> 🍕 Pizza Peperoni </span>
+        </option>
+        <option value="hawaina">
+          <span class="option-pizza"> 🍕 Pizza Hawaina </span>
+        </option>
+        <option value="hawaina">
+          <span class="option-pizza"> 🍕 Pizza Hawaina </span>
+        </option>
+      </select>
+
+      <br />
+
+      <input
+        type="url"
+        name="perfil_instagram"
+        id="perfil_instagram"
+        placeholder="Ingresa tu perfil de Insta"
+      />
+
+      <input type="submit" value="Enviar" />
+    </form> -->
+  
+
+    <form action="https://engmh5j7s47u.x.pipedream.net" method="post" enctype="multipart/form-data" >
+
+        <h5>Adjuntar el Documento PDF</h5>
+        <input id="file_image" type="file" accept=".png, jpg, .jpeg, .webp"  >
+
+
+
+        <!-- <input type="hidden" value="user_id:123" >  -->
+        <!-- <input type="hidden" value="product_id:3" >  -->
+
+        <input type="hidden" value="tk-91281928192891829" name="codigo-secret" > 
+
+        <input type="submit" value="Enviar Ficheros">
+
+    </form>
+
+
+
+    
+    <!-- <script>
+
+            const file_image = document.querySelector("#file_image");
+
+            file_image.onchange = (e) => {
+                console.log(e.target.files[0].name);
+                console.log(e.target.files[0].size);
+                const pesoFichero = e.target.files[0].size;
+
+                if (pesoFichero > 2172600){
+                    alert("no adjuntar fichero superior a 2M");
+                }
+            }
+
+    
+    </script> -->
+
+</body>
+</html>
