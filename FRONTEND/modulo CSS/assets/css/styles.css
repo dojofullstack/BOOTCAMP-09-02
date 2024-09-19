@@ -1,0 +1,83 @@
+
+* {
+    font-family: "Playpen Sans", cursive;
+    
+} 
+
+
+h1 {
+    font-family: "Anton", sans-serif;
+}
+
+h2 {
+    font-family: "Anton", sans-serif;
+}
+
+
+/* img {
+    width: 100%;
+    height: 300px;
+} */
+
+
+/* p {
+    line-height: 18px;
+} */
+
+
+p {
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+h5 {
+    text-transform: uppercase;
+    background-color: aquamarine;
+}
+
+
+
+
+
+#banner-ofertas-navidad {
+    width: 100%;
+    height: 300px;
+    /* background-image: url("https://d1csarkz8obe9u.cloudfront.net/posterpreviews/christmas-mobile-discount-promo-banner-design-template-a787ef1255b50c3bbd6abb17e24c064b_screen.jpg?ts=1671677360")  ; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    background: linear-gradient(93deg, rgba(65, 88, 208, 0.5) 0%, rgba(200, 80, 192, 0.5) 46%, rgba(255, 204, 112, 0.5) 100%), url("https://d1csarkz8obe9u.cloudfront.net/posterpreviews/christmas-mobile-discount-promo-banner-design-template-a787ef1255b50c3bbd6abb17e24c064b_screen.jpg?ts=1671677360");
+    /* background: linear-gradient(0deg, rgba(131,58,180, 0.7) 0%, rgba(29,188,253,0.7) 34%, rgba(94,252,69, 0.7) 65%, rgba(252,176,69,0.7) 96%), url("https://d1csarkz8obe9u.cloudfront.net/posterpreviews/christmas-mobile-discount-promo-banner-design-template-a787ef1255b50c3bbd6abb17e24c064b_screen.jpg?ts=1671677360"); */
+}
+
+
+
+
+
+button {
+    background: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+}
+
+
+li {
+    display: inline-block;
+}
+
+
+#phone1, #phone2, #phone3 {
+    width: 300px;
+    /* display: inline-block; */
+    display: none;
+    /* visibility: visible; */
+}
+
