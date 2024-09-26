@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&display=swap');
+
+
+* {
+    font-family: "Nunito", sans-serif;
+}
+
+
+#container {
+    width: 300px;
+    background-color: aqua;
+    /* padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 25px; */
+    padding: 50px 20px;
+    /* border: 10px solid orange; */
+    border: 10px solid orange;
+    /* margin: 10px; */
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    margin: 20px 5px;
+    /* box-sizing: border-box; */
+    box-sizing: content-box;
+}
+
+
+#container-segundo {
+    border: 3px solid green;
+    width:400px;
+    overflow-x: auto;
+}
+
+
+button {
+    background-color: orange;
+}
+
+
+.btn-buy {
+    background-color: aqua;
+    color: brown;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 0;
+}
+
+
+.zoom-btn {
+    margin-left: 50px;
+    transform: scale(1.5);
+    color: black;
+}
+
+
+h2, h1, h3 {
+    font-family: "Oswald", sans-serif;
+}
+
+
+.frutas, .verduras, #propiedades-alimentos {
+    color: orange;
+    background-color: aquamarine;
+    border: 3px solid orange;
+    padding: 10px;
+}
+
+
+.login {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: greenyellow;
+    margin: 5px 0;
+}
+
+
+
+div.login {
+    background-color: rgb(191, 9, 154);
+    display: inline-block;
+    color: white;
+}
+
+
+
+
+
+.btn-dron {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: greenyellow;
+    margin: 5px 0;
+    background-color: rgb(131, 218, 8);
+    color: white;
+}
+
+
+
+div.conatiner-padre .container-hijo .container-nieto button.btn-dron {
+    background-color: rgb(30, 48, 4);
+}
+
+
