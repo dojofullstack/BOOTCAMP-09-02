@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --color-primario: rgb(27, 194, 27);
+    --color-secundario: #6161dd;
+    --color-night: rgb(28, 26, 26);
+    --type-edu: "Edu AU VIC WA NT Guides", cursive;
+    --type-oswaldo: "Oswald", sans-serif;
+}
+
+
+.primer-boton {
+    border-radius: 15px;
+    background-color: var(--color-secundario);
+    font-weight: 900;
+    font-family: var(--type-oswaldo);
+}

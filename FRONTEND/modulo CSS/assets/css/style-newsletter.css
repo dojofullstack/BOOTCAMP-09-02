@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Oswald:wght@200..700&display=swap');
+:root {
+    --color-primario: rgb(27, 194, 27);
+    --color-secundario: #6161dd;
+    --color-night: rgb(28, 26, 26);
+    --type-edu: "Edu AU VIC WA NT Guides", cursive;
+    --type-oswaldo: "Oswald", sans-serif;
+}
+
+* {
+    font-family: var(--type-edu);
+}
+
+.newsletter {
+    border-radius: 20px;
+    width: 30%;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTy8OPq6ON5rYpWNNDCOKVlsmVyQVcSr-ijA&s);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    position: fixed;
+    left: 50%;
+    top: 50vh;
+    transform: translate(-50%,-50%);
+}
+
+.form-data {
+    margin: 10px 0;
+}
+
+
+.btn-send {
+    background-color: purple;
+    color: white;
+    padding:  10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+div.form-data input {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}

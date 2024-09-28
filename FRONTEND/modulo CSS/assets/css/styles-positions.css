@@ -1,0 +1,41 @@
+
+body {
+    margin: 0;
+}
+
+.parrafo-main {
+    position: relative;
+    /* top: 50px;
+    left: 90px; */
+    background-color: palegoldenrod;
+    border: 3px dashed purple;
+}
+
+
+.btn-acept {
+    position: relative;
+    background-color: palegreen;
+    padding: 10px 20px;
+    border: none;
+}
+
+.btn-cancel {
+    position: relative;
+    background-color: tomato;
+    padding: 10px 20px;
+    border: none;
+    top: 50px;
+    left: 100px;
+}
+
+
+.header-fijo {
+    position: fixed;
+    top: 0;
+    left:9;
+    background-color: rgb(67, 17, 113);
+    padding: 20px;
+    color: white;
+    width: 100%;
+    z-index: 99999999999;
+}
