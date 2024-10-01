@@ -1,0 +1,21 @@
+
+
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.producto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   border: 3px solid orange;
+}
+
+
+.producto img {
+    height: 200px;
+}

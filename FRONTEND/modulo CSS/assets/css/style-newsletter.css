@@ -14,7 +14,7 @@
 .newsletter {
     border-radius: 20px;
     width: 30%;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTy8OPq6ON5rYpWNNDCOKVlsmVyQVcSr-ijA&s);
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTy8OPq6ON5rYpWNNDCOKVlsmVyQVcSr-ijA&s");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
