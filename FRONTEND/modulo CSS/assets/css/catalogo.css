@@ -19,3 +19,65 @@
 .producto img {
     height: 200px;
 }
+
+
+
+/* seudo clase focus */
+.search-product:focus {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: aqua;
+}
+
+/* seudo clase focus */
+.search-google:focus{
+    font-size: 20px;
+    color: green;
+}
+
+
+/* seudo clase hover */
+
+.producto:hover {
+    transform: scale(1.1);
+}
+
+
+.search {
+    background-color: brown;
+    padding: 10px 20px;
+}
+
+.search:hover {
+    background-color: rgba(165, 42, 42, 0.303);
+}
+
+
+.search:active {
+    background-color: black;
+    color: yellow;
+}
+
+
+.search-product:active {
+    background-color: orange;
+}
+
+
+.menu:first-child {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.menu:last-child {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+.menu:nth-child(2) {
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+}
