@@ -1,0 +1,67 @@
+
+
+.item {
+    margin-bottom: 100px;
+}
+
+
+
+.cover-samsung {
+    height: 300px;
+    width: 100%;
+    background: url(https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Samsung-Galaxy-Social-Media-Banner-Design-scaled.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+ 
+    
+    .cover-samsung {
+        background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35ec72c2-41d3-4ff7-9f0e-77ec55ef88f3/d5ay3oc-7d924153-108c-4dc3-a965-466ca48854b2.jpg/v1/fill/w_900,h_780,q_75,strp/banner_add_design_for_samsung_galaxy_s___by_creativewebby_d5ay3oc-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzgwIiwicGF0aCI6IlwvZlwvMzVlYzcyYzItNDFkMy00ZmY3LTlmMGUtNzdlYzU1ZWY4OGYzXC9kNWF5M29jLTdkOTI0MTUzLTEwOGMtNGRjMy1hOTY1LTQ2NmNhNDg4NTRiMi5qcGciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Di_MqkNag6CDhLhfICqSMwoYSgg0fMgUPjQS07xKMbA);
+    }
+
+}
+
+
+
+@media screen and (min-width: 1200px) {
+ 
+    
+    .cover-samsung {
+        background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9lj1N_G0jZMWskCnToZeac1qNw1Cy3uGzRA&s);
+    }
+
+}
+
+
+
+
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+ 
+    
+    .cover-samsung {
+        background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8TZ9Mk6pDxaumohSjwM97Z0F9rUzxFwJelA&s);
+    }
+
+}
+
+
+
+
+
+
+
+.btn-primary {
+    background-color: aquamarine !important;
+    border-radius: 30px !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    background-color: rgba(127, 255, 212, 0.701) !important;
+}
