@@ -1,0 +1,29 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+
+#news-nike, #ofertas-nike {
+    display: none;
+    position: fixed;
+    z-index: 9;
+    top: 5vh;
+    left: 5vw;
+}
+
+
+#grupo-news:hover #news-nike {
+    display: block;
+}
+
+
+
+#grupo-ofertas:hover #ofertas-nike {
+    display: block;
+}
+
+
+#banner-intro {
+    height: 450px;
+    width: 100%;
+    background-size: cover;
+    background: url(https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw73984cb4/Landings/Homepage/Imagenes/banner-p1-estilos-primaverales_MB.jpg);
+}
