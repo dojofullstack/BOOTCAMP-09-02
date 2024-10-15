@@ -1,0 +1,22 @@
+
+
+.form-control {
+    width: 300px;
+}
+
+.menu-ofertas:hover #ofertas {
+    background-color: aquamarine;
+    display: block !important;
+}
+
+
+.menu-news:hover #news {
+    background-color: aquamarine;
+    display: block !important;
+}
+
+
+#search-product input:focus {
+    background-color: aquamarine;
+    width: 600px !important;
+}
