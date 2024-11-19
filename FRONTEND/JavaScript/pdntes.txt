@@ -1,0 +1,10 @@
+-  iteradores forEach & map
+- tipos de funciones
+- manejo de errores
+
+
+- librerias & npm
+- almacenamiento webbrowser
+
+- POO
+- asincronia JS
