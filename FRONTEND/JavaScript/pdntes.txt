@@ -4,7 +4,13 @@
 
 
 - librerias & npm
-- almacenamiento webbrowser
+- JSON
+
+
+- Practicas almacenamiento webbrowser
+- Proyecto Tienda Virtual (Auth)
+- Desarrollo Web moderno con ReactJS, VueJS, Angular.
+
 
 - POO
 - asincronia JS
