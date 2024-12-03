@@ -7,8 +7,17 @@
 - JSON
 
 
-- Practicas almacenamiento webbrowser
+/////////////
 - Proyecto Tienda Virtual (Auth)
+- LISTAR PRODUCTOS
+- CREADOR DE PRODCUTOS
+- EDITAR PRODCUTOS
+- ELIMINAR PRODUCTOS
+- BUSCADOR DE PRODUCTOS
+- AUTH DE USUARIOS
+- WEB DEPLOYMENT
+
+
 - Desarrollo Web moderno con ReactJS, VueJS, Angular.
 
 
