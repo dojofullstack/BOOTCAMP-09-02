@@ -10,16 +10,21 @@
 /////////////
 - Proyecto Tienda Virtual (Auth)
 - LISTAR PRODUCTOS
+- BUSCADOR DE PRODUCTOS
 - CREADOR DE PRODCUTOS
+- AGREGAR AL CARRITO
 - EDITAR PRODCUTOS
 - ELIMINAR PRODUCTOS
-- BUSCADOR DE PRODUCTOS
+
 - AUTH DE USUARIOS
 - WEB DEPLOYMENT
+
+- POO
+- asincronia JS
+
+
 
 
 - Desarrollo Web moderno con ReactJS, VueJS, Angular.
 
 
-- POO
-- asincronia JS

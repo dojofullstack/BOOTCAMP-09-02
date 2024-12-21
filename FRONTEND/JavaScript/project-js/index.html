@@ -11,6 +11,9 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
 
@@ -26,6 +29,17 @@
               </a>
             </div>
             <div class="flex-none">
+
+              <div>
+                <input
+                  id="input-search"
+                  type="text"
+                  placeholder="Buscar productos aqui"
+                  class="input input-bordered input-secondary w-full max-w-xs"
+                  onkeydown="eventKeyEnter(event)"
+                  />
+              </div>
+
               <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
                   <div class="indicator">
@@ -48,10 +62,10 @@
                   tabindex="0"
                   class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
                   <div class="card-body">
-                    <span class="text-lg font-bold">8 Items</span>
-                    <span class="text-info">Subtotal: $999</span>
+                    <span class="text-lg font-bold" id="total-items" >0 Items</span>
+                    <span class="text-info" id="sub-total">Subtotal: $0</span>
                     <div class="card-actions">
-                      <button class="btn btn-primary btn-block">View cart</button>
+                      <button class="btn btn-primary btn-block">Resumen del Carrito</button>
                     </div>
                   </div>
                 </div>
@@ -125,59 +139,140 @@
     <main>
 
 
-        <div class="container flex flex-wrap">
+      <button class="btn btn-success text-xl" onclick="my_modal_product.showModal()">CREAR PRODUCTO</button>
 
-            <div class="card bg-base-100 w-96 shadow-xl">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Shoes!</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
+      <dialog id="my_modal_product" class="modal">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">
+            Crear Producto
+          </h3>
+
+          <div>
+
+            <label class="form-control ">
+              <div class="label">
+                <span class="label-text">Tilulo del producto</span>
               </div>
+              <input id="title_product" type="text" placeholder="Titulo" class="input input-bordered w-full" />
+            </label>
 
 
-              <div class="card bg-base-100 w-96 shadow-xl">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Shoes!</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
+            <label class="form-control ">
+              <div class="label">
+                <span class="label-text">Description</span>
               </div>
+              <textarea  id="info_product" class="textarea textarea-secondary" placeholder="Bio"></textarea>
+
+            </label>
 
 
-
-              <div class="card bg-base-100 w-96 shadow-xl">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Shoes!</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
+            <label class="form-control ">
+              <div class="label">
+                <span class="label-text">Precio</span>
               </div>
+              <input id="price_product" type="text" placeholder="Precio" class="input input-bordered w-full" />
+            </label>
 
+
+            <label class="form-control ">
+              <div class="label">
+                <span class="label-text">Imagen</span>
+              </div>
+              <input
+              id="image_product"
+              type="file"
+              class="file-input file-input-bordered file-input-secondary w-full max-w-xs" />
+            </label>
+
+
+          </div>
+
+
+
+          <div class="modal-action">
+            <div method="dialog w-full">
+              <!-- if there is a button in form, it will close the modal -->
+
+              <button class="btn btn-primary text-xl"  onclick="createProduct()" >Guardar</button>
+
+              <button class="btn text-xl" onclick="document.querySelector('#my_modal_product').close();" >Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+
+
+
+
+      <dialog id="my_modal_product_update" class="modal">
+        <div class="modal-box">updateProductService
+          <h3 class="text-lg font-bold">
+            Actualizar Producto
+          </h3>
+
+          <div>
+
+
+            <input type="hidden" value="" id="title_product_id">
+
+
+            <label class="form-control ">
+              <div class="label">
+                <span class="label-text">Tilulo del producto</span>
+              </div>
+              <input id="title_product_update" type="text" placeholder="Titulo" class="input input-bordered w-full" />
+            </label>
+
+
+            <label class="form-control ">
+              <div class="label">
+                <span class="label-text">Description</span>
+              </div>
+              <textarea  id="info_product_update" class="textarea textarea-secondary" placeholder="Bio"></textarea>
+
+            </label>
+
+
+            <label class="form-control ">
+              <div class="label">
+                <span class="label-text">Precio</span>
+              </div>
+              <input id="price_product_update" type="text" placeholder="Precio" class="input input-bordered w-full" />
+            </label>
+
+
+            <label class="form-control ">
+              <div class="label">
+                <span class="label-text">Imagen</span>
+              </div>
+              <input
+              id="image_product_update"
+              type="file"
+              class="file-input file-input-bordered file-input-secondary w-full max-w-xs" />
+            </label>
+
+
+          </div>
+
+
+
+          <div class="modal-action">
+            <div method="dialog w-full">
+              <!-- if there is a button in form, it will close the modal -->
+
+              <button class="btn btn-primary text-xl"  onclick="updateProductService()" >
+                Actualizar
+              </button>
+
+              <button class="btn text-xl" onclick="document.querySelector('#my_modal_product_update').close();" >Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+
+        <div class="container flex flex-wrap gap-5" id="catalogo" >
 
         </div>
 
