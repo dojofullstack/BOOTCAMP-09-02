@@ -250,16 +250,125 @@ const loginAuth = () => {
     console.log(data);
 
     axios.post('https://dummyjson.com/auth/login', data).then((res) => {
+        
         console.log(res.data);
-
         
         // pendiente almacenar credenciales en memory persistent y temporal
 
-        if (res.data.accessToken) {
-            window.location.href = "/project-js/index.html"
+        localStorage.setItem("profile",  JSON.stringify(res.data) );
+
+        const accessToken = res.data.accessToken;
+        const refreshToken= res.data.refreshToken;
+
+
+        // setea la cookie caduca en 24h
+        const fechaActual = new Date();
+        const hora = new Date();
+        hora.setTime(1000*60*60*24);
+        fechaActual.setTime( fechaActual.getTime() +  hora.getTime() );
+
+        document.cookie = `accessToken=${accessToken};path=/;expires=` + fechaActual.toUTCString();
+        document.cookie = `refreshToken=${refreshToken};path=/;expires=` + fechaActual.toUTCString();
+
+
+        if (accessToken && refreshToken) {
+            window.location.href = "/project-js/index.html";
         }
 
 
     })
+
+}
+
+
+
+const loadProfile = () => {
+
+   const profile = document.querySelector("#profile");
+   profile.style.display = "none";
+
+
+   checkLogin();
+
+
+}
+
+
+const getCookie = (name) => {
+  const value = `; ${document.cookie}`;  // Agrega un punto y coma al inicio para facilitar la búsqueda
+  const parts = value.split(`; ${name}=`);  // Divide la cookie por el nombre buscado
+  if (parts.length === 2) {
+      return parts.pop().split(';').shift();  // Regresa el valor de la cookie
+  }
+  return null;  // Si la cookie no existe, retorna null
+}
+
+
+
+
+const getProfileUser  = (accessToken) => {
+
+    const headers = {
+        'Authorization': "Bearer " + accessToken
+    }
+
+    axios.get('https://dummyjson.com/auth/me',  {headers: headers} ).then((res) => {
+      console.log(res.data);
+      localStorage.setItem("profile",  JSON.stringify(res.data) );
+
+      const profile = document.querySelector("#profile");
+      const login = document.querySelector("#login");
+
+      login.style.display = "none";
+      profile.style.display = "block";
+
+      document.querySelector("#firstName").innerHTML = res.data.firstName;
+
+
+    } )
+
+}
+
+
+const checkLogin = () => {
+
+  const cookieValue = getCookie('accessToken');
+
+  console.log(cookieValue);
+
+  if (cookieValue){
+      
+      // como altenativa validar el token que este activo 
+
+      // cargar la sesion del usuario
+      getProfileUser(cookieValue);
+
+  } else {
+      console.log("seccion restringida");
+      
+      // generar rediccion al Login
+      // location.href = "/project-js/auth/login.html";
+  }
+  
+
+}
+
+
+
+
+loadProfile();
+
+
+
+const logout = () => {
+
+    localStorage.removeItem("profile");
+
+    const fechaActualNow = new Date();
+
+    document.cookie = `accessToken=;path=/; expires=${fechaActualNow.toUTCString()}`;
+
+
+    location.href = "/project-js/auth/login.html";
 
 }

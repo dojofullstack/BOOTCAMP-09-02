@@ -19,9 +19,9 @@
 - AUTH DE USUARIOS
 - WEB DEPLOYMENT
 
+
 - POO
 - asincronia JS
-
 
 
 
