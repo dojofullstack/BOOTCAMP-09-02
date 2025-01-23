@@ -3,6 +3,7 @@ import { Carousel } from "../components/Carousel";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import axios from "axios";
+import { CreateProduct } from "../components/CreateProduct";
 
 
 
@@ -44,6 +45,8 @@ const Home = () => {
 
           
             <Carousel/>
+
+            <CreateProduct/>
 
 
             <div className="flex flex-wrap">
@@ -92,6 +95,7 @@ const Home = () => {
 
 
         </main>
+        
 
 
         <Footer/>
