@@ -1,12 +1,40 @@
+import { useContext } from "react";
+import themeContext from "../context";
+
 const Header = () => {
+
+    const {themePage, changeTheme} =  useContext(themeContext);
+
+
+    console.log("consumer context: ",themePage);
+
+    // console.log(changeTheme);
+    
+    
+
+
   return (
     <>
       <header>
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100" style={{
+          backgroundColor: themePage
+        }} >
+          
           <div className="flex-1">
             <a className="btn btn-ghost text-xl">daisyUI</a>
           </div>
           <div className="flex-none">
+
+<details className="dropdown">
+  <summary className="btn m-1">Temas</summary>
+  <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+    <li onClick={() => changeTheme("orange")} ><a>Color orange</a></li>
+    <li onClick={() => changeTheme("yellow")} ><a>Color Yellow</a></li>
+    <li onClick={() => changeTheme("purple")} ><a>Color Purple</a></li>
+  </ul>
+</details>
+
+
             <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}

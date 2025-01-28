@@ -1,10 +1,35 @@
+import useStore from "../store";
 
 
 
 const Footer = () => {
+
+    const theme = useStore((state) => state.theme );
+    const changeTheme = useStore((state) => state.changeTheme );
+
+    console.log(theme);
+    console.log(changeTheme);
+    
+
+
     return (
         <>
-         <footer className="footer footer-center bg-primary text-primary-content p-10">
+         <footer className="footer footer-center bg-primary text-primary-content p-10"
+          style={{
+            backgroundColor: theme
+        }}>
+
+
+<details className="dropdown">
+  <summary className="btn m-1">Temas</summary>
+  <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+    <li onClick={() => changeTheme("orange")} ><a>Color orange</a></li>
+    <li onClick={() => changeTheme("yellow")} ><a>Color Yellow</a></li>
+    <li onClick={() => changeTheme("purple")} ><a>Color Purple</a></li>
+  </ul>
+</details>
+
+
   <aside>
     <svg
       width="50"

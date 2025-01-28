@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
+import useStore from "../store";
 
 
 export const CreateProduct = () => {
@@ -7,15 +8,20 @@ export const CreateProduct = () => {
     // const titleRef = useRef();
     // const precioRef = useRef();
 
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
 
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
+    const [loading, setLoading] = useState(false);
+    const [loadingRegistro, setLoadingRegistro] = useState(false);
 
-    console.log("catalogo products:",products);
+    const addProduct = useStore((state) => state.addProduct );
+
+
+    // console.log("catalogo products:",products);
 
 
     const uploadImage = async (fileImage) => {
@@ -25,6 +31,9 @@ export const CreateProduct = () => {
 
 
     const saveProduct = async () => {
+
+
+        setLoading(true);
 
         // const imageUrl = await uploadImage(fileImage);
 
@@ -44,12 +53,20 @@ export const CreateProduct = () => {
             
             console.log(res.data);
 
+
+            addProduct(res.data);
+            setLoading(false);
+
             // console.log([...products, res.data ]);
             
-            setProducts( (products) => [ ...products, res.data ] );
+            // setProducts( (products) => [ ...products, res.data ] );
 
         }).catch((error) => {
+            setLoading(false);
+
             console.log(error);
+        }).finally(() => {
+            setLoading(false);
         })
 
 
@@ -107,7 +124,18 @@ export const CreateProduct = () => {
                 />
 
 
-                <button onClick={saveProduct} className="btn btn-accent text-lg">Guardar</button>
+                <button onClick={saveProduct} className="btn btn-accent text-lg">
+
+                    {
+                      !loading ? 
+                      "Guardar":
+                      <>
+                       <span className="loading loading-spinner"></span>
+                       Guardando
+                      </>
+                    }
+
+                </button>
 
                 
                 

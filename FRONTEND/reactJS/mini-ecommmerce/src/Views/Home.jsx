@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import axios from "axios";
 import { CreateProduct } from "../components/CreateProduct";
+import useStore from "../store";
 
 
 
@@ -13,6 +14,14 @@ const Home = () => {
     const [logoStore, setLogoStore ] = useState("htttps://");
 
     console.log("Estado product", product);
+
+
+    const catalogProduct = useStore((state) => state.catalogProduct );
+
+
+    console.log("store de zustand", catalogProduct);
+    
+
     
 
     const getProduct = () => {
