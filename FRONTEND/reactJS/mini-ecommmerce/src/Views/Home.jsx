@@ -5,10 +5,21 @@ import Header from "../components/Header";
 import axios from "axios";
 import { CreateProduct } from "../components/CreateProduct";
 import useStore from "../store";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+// import Image from "next/image";
 
 
+
+  
 
 const Home = () => {
+
+    const navigate = useNavigate();
+
+    const {slugCategory} = useParams();
+
+    const [params] = useSearchParams();    
+
     const [product, setProduct] = useState([]);
     const [nameStore, setNameStore ] = useState("Nike Store");
     const [logoStore, setLogoStore ] = useState("htttps://");
@@ -20,6 +31,13 @@ const Home = () => {
 
 
     console.log("store de zustand", catalogProduct);
+
+    console.log(params.get("productDetail"));
+    console.log(params.get("userId"));
+
+    console.log("slugCategory", slugCategory);
+    
+    
     
 
     
@@ -28,9 +46,9 @@ const Home = () => {
 
         if (!product.length) {
             console.log("recuperando productos!");
-            axios.get('https://dummyjson.com/products').then( (data) => {
-                console.log(data.data);
-                setProduct(data.data.products);
+            axios.get('https://api.dojofullstack.com/api-demo/v1/product/').then( (data) => {
+                // console.log(data.data.results);
+                setProduct(data.data.results);
             })
         }
 
@@ -64,10 +82,14 @@ const Home = () => {
                 product.length ? (
                     product.map((item, index) => (
 
-                        <div key={index} className="card bg-base-100 w-96 shadow-xl">
+                        <div key={index} className="card bg-base-100 w-96 shadow-xl cursor-pointer"
+                        onClick={ () => {
+                            navigate(`/product/${item.id}`);
+                        }}
+                        >
                             <figure>
                             <img
-                                src={item.images[0]}
+                                src={item.image_url}
                                 alt="Shoes" />
                             </figure>
                             <div className="card-body">
@@ -77,6 +99,9 @@ const Home = () => {
                             </h2>
                             <p>
                                 {item.description}
+                            </p>
+                            <p className="text-lg text-primary">
+                                {item.price}
                             </p>
                             <div className="card-actions justify-end">
                                 <div className="badge badge-outline">Fashion</div>

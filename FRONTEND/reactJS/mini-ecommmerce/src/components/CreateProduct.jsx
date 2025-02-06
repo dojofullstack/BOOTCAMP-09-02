@@ -46,13 +46,12 @@ export const CreateProduct = () => {
             "name": title,
             "description": description,
             "price": price,
-            "image": null
+            "image_url": image
         }
 
         axios.post("https://api.dojofullstack.com/api-demo/v1/product/", payload).then((res) => {
             
-            console.log(res.data);
-
+            // console.log(res.data);
 
             addProduct(res.data);
             setLoading(false);
